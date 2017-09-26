@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=utf-8" />
+    <title>John Pietrapaoli Volleyball League</title>
+    <meta name="keywords" content="volleyball, YWCA, jpvolleyball, John Pietropaoli, league" />
+    <meta name="description" content="The John Pietrapaoli Coed A Volleyball League" />
+    <link href="/static/templatemo_style.css" rel="stylesheet" type="text/css" />
+    <!-- Arquivos utilizados pelo jQuery lightBox plugin -->
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+    <!-- / fim dos arquivos utilizados pelo jQuery lightBox plugin -->
+    <!-- Ativando o jQuery lightBox plugin -->
+    <script type="text/javascript">
+$(function() {
+    $('#map a').lightBox();
+});
+</script> 
+</head>
+  <body> <span id="top"></span>
+    <div id="templatemo_wrapper">
+      <div id="templatemo_header">
+        <div id="site_title">
+          <h1><a href="/">JPVolleyball.com</a></h1>
+        </div><!-- end of site_title -->
+        <div id="templatemo_menu">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/teams">Teams</a></li>
+            <li><a href="/schedule">Schedule</a></li>
+            <li><a href="/standings">Standings</a></li>
+            <li class="last"><a href="/contact">Contact</a></li>
+          </ul>
+        </div><!-- end of templatemo_menu -->
+      </div><!-- end of header -->
+      <div id="templatemo_main">
+        <div id="home"></div>
+        <div class="content_box_top"></div>
+        <div class="content_box">
+{% block body %}
+{% endblock %}
+        <div class="cleaner h30"></div>
+        </div><!-- end of a content box -->
+        <div class="content_box_bottom"></div>
+      </div><!-- end of main -->
+      <div id="templatemo_footer"> Copyright © 2017 <a href="#">The John Pietropaoli
+          Volleyball League</a> | Designed by <a href="http://www.templatemo.com" target="_parent">Free
+ CSS Templates</a> </div>
+    </div><!-- end of wrapper -->
+  </body>
+</html>

@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h2>Player Administration</h2>
+<table border="1" width="100%">
+  {% for p in players %}
+  <tr>
+    <td style="padding-left:3px">{{ p.name }}</td>
+    <td style="padding-left:3px">Status: 
+      <select id={{ p }}_status>
+        <option value=""></option>
+        <option value="active" {% if p.status == 'active' %}selected{% endif %}>Active</option>
+        <option value="inactive" {% if p.status == 'inactive' %}selected{% endif %}>Inactive</option>
+      </select>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

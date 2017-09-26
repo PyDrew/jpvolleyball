@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<!--
+            <form id="clear_ip_form" method="post" action="{{ url_for('clear_voting_ips') }}">
+                <input type="submit" id="clear_ips_submit" value="Clear IP Addresses">
+            </form>
+            <form id="clear_voting_form" method="post" action="{{ url_for('clear_voting_data') }}">
+                <input type="submit" id="clear_voting_submit" value="Clear Voting Data">
+            </form>
+            *** Don't use these buttons (<strong>IAN!!!</strong>).<br/>
+            They are for Drew to reset the votes after the season is over.<br/>
+            <hr>
+-->
+            {% for key, value in votes.iteritems() %}
+            <strong>{{ key }}</strong>: {{ value['num_votes'] }}<br/>
+            <div style="padding-left:10px">
+                Comments:
+                <ul>
+                {% for c in value['comments'] %}
+                    <li>{{ c }}</li>
+                {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+			<h2>{{ response }}</h2>
+{% endblock %}

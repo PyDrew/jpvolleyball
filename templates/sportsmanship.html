@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h2>Sportsmanship Award</h2>
+<!--<h3>Too late, sucka! Voting is over!</h3>-->
+    <form name="sportsmanship" action="{{ url_for('handle_vote') }}" method="POST" >
+        <h4>Cast your vote for the sportsmanship award:</h4>
+        <div>
+            <select name="vote">
+              <option value=""></option>
+              {% for p in players %}
+              <option value="{{ p }}">{{ p }}</option>
+              {% endfor %}
+            </select>
+        </div>
+        <div style="margin-top:15px;margin-bottom:15px">
+            Tell us why you voted for this person:<br/>
+            <textarea  name="comment" rows="10" cols="60"></textarea>
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+ {% endblock %}
