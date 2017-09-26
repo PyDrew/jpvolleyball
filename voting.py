@@ -65,5 +65,5 @@ if __name__ == '__main__':
         elif sys.argv[1] == '--clear_data':
             ClearVotingData()
         else:
-            print "\nERROR: Did not understand option: %s" % sys.argv[1]
+            print( "\nERROR: Did not understand option: %s" % sys.argv[1] )
     #ClearVotingData()

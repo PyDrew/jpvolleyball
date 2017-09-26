@@ -162,8 +162,8 @@ def add_player():
 '''
 
 with app.test_request_context():
-    print url_for('index')
-    print url_for('static', filename='images/templatemo_body.jpg')    
+    print( url_for('index') )
+    print( url_for('static', filename='images/templatemo_body.jpg') )
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0")
