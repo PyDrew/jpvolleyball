@@ -20,23 +20,31 @@ def AddVote(player, comment, ip):
     vote_file = (os.path.join(data_dir,'votes.json'))
     response = "Thank you for voting!"
     if not os.path.exists(vote_file):
-        vote_data = {'votes': {}, 'ip_addresses': []}
+        vote_data = {
+            'votes': {
+                player: {
+                    'num_votes': 1,
+                    'comments': [comment]
+                }
+            },
+            'ip_addresses': [ip]
+        }
         json.dump(vote_data, open(vote_file, 'w'), indent=3)
+    else:
+        vote_data = json.load(open(vote_file))
 
-    vote_data = json.load(open(vote_file))
-    
-    vote_data["ip_addresses"].append(ip)
-    try:
-        vote_data['votes'][player]['num_votes'] += 1
-    except KeyError:
-        vote_data['votes'][player] = {'num_votes': 1}
-    
-    if comment:
+        vote_data["ip_addresses"].append(ip)
         try:
-            vote_data['votes'][player]['comments'].append(comment)
-        except:
-            vote_data['votes'][player]['comments'] = [comment,]
-    json.dump(vote_data, open(vote_file, 'w'), indent=3)
+            vote_data['votes'][player]['num_votes'] += 1
+        except KeyError:
+            vote_data['votes'][player] = {'num_votes': 1}
+
+        if comment:
+            try:
+                vote_data['votes'][player]['comments'].append(comment)
+            except:
+                vote_data['votes'][player]['comments'] = [comment,]
+        json.dump(vote_data, open(vote_file, 'w'), indent=3)
 
     return response
 
