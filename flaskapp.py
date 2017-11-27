@@ -14,14 +14,14 @@ try:
     data_dir = os.environ['OPENSHIFT_DATA_DIR']
 except KeyError:
     # Local development environment
-    data_dir = 'static'
+    data_dir = '/static'
 
 def LoadPlayerFile():
     return json.load(open(os.path.join(data_dir, 'players.json')))
     
 def DumpPlayerFile(data):
     fp = open(os.path.join(data_dir, 'players.json'), 'w')
-    json.dunp(data, fp)
+    json.dump(data, fp)
 
 def LoadVoteFile():
     return json.load(open(os.path.join(data_dir, 'votes.json')))
@@ -126,7 +126,10 @@ def handle_vote():
 def voting_results():
     vote_file = (os.path.join(data_dir,'votes.json'))
     if os.path.exists(vote_file):
-        vote_data = json.load(open(vote_file))
+        try:
+            vote_data = json.load(open(vote_file))
+        except:
+            render_template("teams.html")
         return render_template("voting_results.html", votes=vote_data['votes'])
     
     return render_template("index.html")
