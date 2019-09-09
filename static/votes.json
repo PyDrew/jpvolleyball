@@ -1,0 +1,29 @@
+{
+   "votes": {
+      "Alex Roskowski": {
+         "num_votes": 2,
+         "comments": [
+            "asdf",
+            "zxcv"
+         ]
+      },
+      "Bryan Lowe": {
+         "num_votes": 1,
+         "comments": [
+            "Always a good choice"
+         ]
+      },
+      "Brian Galipeau": {
+         "num_votes": 1,
+         "comments": [
+            "asdf"
+         ]
+      }
+   },
+   "ip_addresses": [
+      "127.0.0.1",
+      "127.0.0.1",
+      "127.0.0.1",
+      "127.0.0.1"
+   ]
+}
